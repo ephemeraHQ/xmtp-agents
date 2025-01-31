@@ -19,7 +19,9 @@ const env: XmtpEnv = "dev";
 
 async function main() {
   console.log(`Creating client on the '${env}' network...`);
-  const client = await Client.create(signer, encryptionKey, { env });
+  const client = await Client.create(signer, encryptionKey, {
+    env,
+  });
 
   console.log("Syncing conversations...");
   await client.conversations.sync();
